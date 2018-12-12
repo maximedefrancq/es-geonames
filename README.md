@@ -1,3 +1,5 @@
+This Fork is an little update for most recent version of ElasticSearch and use of parameters
+
 ES-Geonames
 ===========
 
@@ -9,8 +11,10 @@ To download the Geonames.org gazetter, set up Dockerized Elasticsearch, and
 load the gazetteer into Elasticsearch, clone this repository and run
 
 ```
-bash create_index.sh
+bash create_index.sh FileName ES_host:port
 ```
+
+Where File Name is one of this (without zip) http://download.geonames.org/export/dump/
 
 The `geonames_index/` directory can be compressed and moved elsewhere. To start a new
 Elasticsearch instance using the prepared index, run

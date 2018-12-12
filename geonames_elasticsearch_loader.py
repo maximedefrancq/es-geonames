@@ -8,7 +8,7 @@ from tqdm import tqdm
 import time
 
 csv.field_size_limit(sys.maxsize)
-es = Elasticsearch(urls='http://localhost:9200/', timeout=60, max_retries=2)
+es = Elasticsearch(sys.argv[2])
 
 
 def iso_convert(iso2c):
@@ -121,8 +121,7 @@ def documents(reader, es):
 
 if __name__ == "__main__":
     t = time.time()
-    f = open('allCountries.txt', 'rt')
-    #f = open('shortcountries.txt', 'rt')
+    f = open(sys.argv[1] + '.txt', 'rt')
     reader = csv.reader(f, delimiter='\t')
     actions = documents(reader, es)
     helpers.bulk(es, actions, chunk_size=500)
