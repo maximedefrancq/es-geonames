@@ -10,6 +10,8 @@ import time
 csv.field_size_limit(sys.maxsize)
 es = Elasticsearch(sys.argv[2])
 
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def iso_convert(iso2c):
     """

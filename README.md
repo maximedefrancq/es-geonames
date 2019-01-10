@@ -1,4 +1,4 @@
-This Fork is an little update for most recent version of ElasticSearch and use of parameters
+Fork to upload postal codes geonames data
 
 ES-Geonames
 ===========
@@ -15,6 +15,12 @@ bash create_index.sh FileName ES_host:port
 ```
 
 Where File Name is one of this (without zip) http://download.geonames.org/export/dump/
+
+```
+bash create_postalcode_index.sh FileName ES_host:port
+```
+
+Where File Name is one of this (without zip) http://download.geonames.org/export/zip/
 
 The `geonames_index/` directory can be compressed and moved elsewhere. To start a new
 Elasticsearch instance using the prepared index, run

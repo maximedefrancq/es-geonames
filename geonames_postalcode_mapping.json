@@ -1,0 +1,24 @@
+{
+    "settings" : {
+        "number_of_shards" : 1,
+        "number_of_replicas" : 1
+    },
+    "mappings" : {
+       "geoname" : {
+        "properties" : {
+          "country_code" : {"type" : "keyword", "index": "true"},
+          "postal_code" : {"type" : "keyword", "index": "true"},
+          "place_name" : {"type" : "keyword", "index": "true"},
+          "admin_name1" : {"type" : "keyword", "index": "true"},
+          "admin_name2" : {"type" : "keyword", "index": "true"},
+          "admin_name3" : {"type" : "keyword", "index": "true"},
+          "admin_code1" : {"type" : "keyword", "index": "true"},
+          "admin_code2" : {"type" : "keyword", "index": "true"},
+          "admin_code3" : {"type" : "keyword", "index": "true"},
+          "coordinates" : {"type" : "geo_point"},
+          "accuracy" : {"type" : "integer"},
+          "modification_date" : {"type" : "date", "format": "date"}
+          }
+       }
+   } 
+}
