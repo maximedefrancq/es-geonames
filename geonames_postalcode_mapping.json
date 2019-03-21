@@ -17,7 +17,8 @@
           "admin_code3" : {"type" : "keyword", "index": "true"},
           "coordinates" : {"type" : "geo_point"},
           "accuracy" : {"type" : "integer"},
-          "modification_date" : {"type" : "date", "format": "date"}
+          "modification_date" : {"type" : "date", "format": "date"},
+          "suggest": {"type": "completion"}
           }
        }
    } 

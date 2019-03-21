@@ -17,7 +17,7 @@ def documents(reader, es):
     todays_date = datetime.today().strftime("%Y-%m-%d")
     count = 0
     i = 0
-    for row in tqdm(reader, total=11741135): # approx
+    for row in tqdm(reader, total=1264941): # approx
         try:
             coords = row[9] + "," + row[10]
             doc = { "country_code" : row[0],
@@ -31,7 +31,10 @@ def documents(reader, es):
                     "admin_code3" : row[8],
                     "accuracy" : row[11],
                     "coordinates" : coords,  # 9, 10
-                    "modification_date" : todays_date
+                    "modification_date" : todays_date,
+                    "suggest": {
+                        "input" : [row[2]]
+                    }
                    }
             action = {"_index" : "geonames_postalcode",
                       "_type" : "geoname",
