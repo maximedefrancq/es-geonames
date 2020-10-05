@@ -1,10 +1,5 @@
 {
-    "settings" : {
-        "number_of_shards" : 1,
-        "number_of_replicas" : 1
-    },
-    "mappings" : {
-       "geoname" : {
+    "mappings" : {   
         "properties" : {
           "country_code" : {"type" : "keyword", "index": "true"},
           "postal_code" : {"type" : "keyword", "index": "true"},
@@ -20,6 +15,6 @@
           "modification_date" : {"type" : "date", "format": "date"},
           "suggest": {"type": "completion"}
           }
-       }
+      
    } 
 }
